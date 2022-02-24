@@ -1,13 +1,99 @@
-body {
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  padding: 1rem;
+  font-size: 3rem;
+  background-color: coral;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+label {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.form-input {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  margin: 0.5rem 0;
+  outline: none;
+}
+
+.btn {
+  padding: 0.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  background-color: coral;
+  border: none;
+  font-weight: 700;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-container {
+  margin: 1rem 0;
+  box-shadow: 0px 9px 15px 0px rgba(66, 68, 90, 0.27);
+  border-radius: 1rem;
+  max-width: 300px;
+}
+
+img {
+  width: 300px;
+  height: 450px;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.card-text {
+  padding: 1rem;
+}
+
+.card-text h3 {
+  text-align: center;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.card-text p:last-child {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+@media only screen and (min-width: 768px) {
+  .card {
+    max-width: 1440px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .card-container {
+    margin: 1rem 1rem;
+  }
 }
