@@ -1,14 +1,14 @@
 import { useState } from "react";
+import MovieCard from "./MovieCard";
 
 function SearchMovies() {
-
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
 
   const searchMovies = async (e) => {
     e.preventDefault();
 
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${query}&include_adult=false`;
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${query}&include_adult=false`;
 
     try {
       const res = await fetch(url);
@@ -27,9 +27,17 @@ function SearchMovies() {
   return (
     <>
       <form className="form" onSubmit={searchMovies}>
-        <label htmlFor="query">Movie name: </label>
-        <input className="form-input" type="text" name="query" placeholder="Search movie..." value={query} onChange={queryMovie} />
-        <button className="btn" type="submit">Search</button>
+        <input
+          className="form-input"
+          type="text"
+          name="query"
+          placeholder="Search movie..."
+          value={query}
+          onChange={queryMovie}
+        />
+        <button className="btn" type="submit">
+          Search
+        </button>
       </form>
       <div className="card">
         {movies
@@ -48,19 +56,5 @@ function SearchMovies() {
     </>
   );
 }
-
-const MovieCard = ({ title, img, release_date, vote_average, overview }) => {
-  return (
-    <div className="card-container">
-      <img src={`https://image.tmdb.org/t/p/w300/${img}`} alt={title + "poster"} />
-      <div className="card-text">
-        <h3>{title}</h3>
-        <p>Release date: {release_date}</p>
-        <p>Rating: {vote_average}</p>
-        <p>{overview}</p>
-      </div>
-    </div>
-  );
-};
 
 export default SearchMovies;

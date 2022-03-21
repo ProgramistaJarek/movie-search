@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *,
 *::after,
 *::before {
@@ -6,94 +10,44 @@
   padding: 0;
 }
 
-h1 {
-  padding: 1rem;
-  font-size: 3rem;
-  background-color: coral;
-  width: 100%;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
+@layer components {
+  body {
+    @apply bg-black;
+  }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+  .nav {
+    @apply bg-[url('/public/bg.jpg')] w-full h-[512px] bg-bottom flex items-center justify-center text-white;
+  }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1.5rem;
-}
+  .nav h1 {
+    @apply text-white font-bold text-3xl;
+  }
 
-label {
-  font-weight: 700;
-  font-size: 1.2rem;
-}
+  .form {
+    @apply flex flex-col mx-4;
+  }
 
-.form-input {
-  padding: 0.5rem 1rem;
-  border-radius: 1rem;
-  margin: 0.5rem 0;
-  outline: none;
-}
+  .form-input {
+    @apply px-4 py-2 text-black rounded-xl w-full;
+  }
 
-.btn {
-  padding: 0.5rem;
-  border-radius: 1rem;
-  cursor: pointer;
-  background-color: coral;
-  border: none;
-  font-weight: 700;
-}
+  .btn {
+    @apply px-4 py-2 bg-white  w-1/4 mx-auto mt-4 rounded-xl;
+  }
 
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.card-container {
-  margin: 1rem 0;
-  box-shadow: 0px 9px 15px 0px rgba(66, 68, 90, 0.27);
-  border-radius: 1rem;
-  max-width: 300px;
-}
-
-img {
-  width: 300px;
-  height: 450px;
-  border-radius: 1rem 1rem 0 0;
-}
-
-.card-text {
-  padding: 1rem;
-}
-
-.card-text h3 {
-  text-align: center;
-  margin-bottom: 0.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-}
-
-.card-text p:last-child {
-  margin-top: 0.5rem;
-  padding-top: 0.5rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.25);
-}
-
-@media only screen and (min-width: 768px) {
   .card {
-    max-width: 1440px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
+    @apply mx-4 mt-12;
   }
 
   .card-container {
-    margin: 1rem 1rem;
+    @apply text-white flex flex-col my-8 rounded-lg bg-zinc-800;
+  }
+
+  .card-container img {
+    @apply rounded-tl-lg rounded-tr-lg;
+  }
+
+  .card-text {
+    @apply p-4;
   }
 }
