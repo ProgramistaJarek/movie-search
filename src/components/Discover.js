@@ -24,13 +24,18 @@ function Discover() {
   };
   return (
     <>
-      <ul className="text-white">
-        <li onClick={() => setSort("vote_average.asc")}>vote small</li>
-        <li onClick={() => setSort("vote_average.desc")}>vote up</li>
-        <li onClick={() => setSort("release_date.asc")}>release date small</li>
-        <li onClick={() => setSort("release_date.desc")}>release date up</li>
-        <li onClick={() => setSort("popularity.desc")}>popularity up</li>
-      </ul>
+      <div className="sort">
+        <p>filtruj</p>
+        <ul>
+          <li onClick={() => setSort("vote_average.asc")}>vote small</li>
+          <li onClick={() => setSort("vote_average.desc")}>vote up</li>
+          <li onClick={() => setSort("release_date.asc")}>
+            release date small
+          </li>
+          <li onClick={() => setSort("release_date.desc")}>release date up</li>
+          <li onClick={() => setSort("popularity.desc")}>popularity up</li>
+        </ul>
+      </div>
       <div className="card">
         {movies
           .filter((movie) => movie.poster_path)

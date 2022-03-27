@@ -16,11 +16,19 @@
   }
 
   .nav {
-    @apply bg-[url('/public/bg.jpg')] w-full h-[512px] bg-bottom flex items-center justify-center text-white;
+    @apply bg-[url('/public/bg.jpg')] w-full h-[512px] bg-bottom flex flex-col items-center justify-center text-white;
   }
 
   .nav h1 {
     @apply text-white font-bold text-3xl;
+  }
+
+  .nav-links {
+    @apply mt-8;
+  }
+
+  .nav-links a {
+    @apply mx-4;
   }
 
   .form {
@@ -35,12 +43,28 @@
     @apply px-4 py-2 bg-white  w-1/4 mx-auto mt-4 rounded-xl;
   }
 
+  .sort {
+    @apply text-white text-center;
+  }
+
+  .sort p {
+    @apply capitalize font-semibold tracking-wider;
+  }
+
+  .sort ul {
+    @apply bg-zinc-800 mt-4 w-fit mx-auto px-10 rounded-lg;
+  }
+
+  .sort ul li {
+    @apply py-1;
+  }
+
   .card {
     @apply mx-4 mt-12;
   }
 
   .card-container {
-    @apply text-white flex flex-col my-8 rounded-lg bg-zinc-800;
+    @apply text-white flex flex-col my-8 rounded-lg bg-zinc-800 shadow-lg shadow-zinc-600;
   }
 
   .card-container img {
@@ -49,5 +73,15 @@
 
   .card-text {
     @apply p-4;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .card {
+      @apply flex flex-wrap justify-evenly items-center;
+    }
+
+    .card-container {
+      @apply basis-1/4 mx-2;
+    }
   }
 }
